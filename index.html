@@ -406,13 +406,17 @@
 
   .pd-scroll-area{
     flex:1; position:relative; overflow-x:auto; overflow-y:hidden;
-    display:flex; align-items:center; gap:56px;
+    display:flex; align-items:center;
     padding:50px 90px;
     scroll-snap-type:x proximity;
     cursor:grab;
     background:
       radial-gradient(circle, rgba(43,33,25,0.45) 1.1px, transparent 1.6px) 0 0/28px 28px,
       var(--paper);
+  }
+  .pd-track{
+    display:flex; align-items:center; gap:56px;
+    height:100%; flex-shrink:0;
   }
   .pd-scroll-area.dragging{ cursor:grabbing; scroll-behavior:auto; }
   .pd-scroll-area::-webkit-scrollbar{ height:6px; }
@@ -492,7 +496,8 @@
     .grid{ grid-template-columns:repeat(2,1fr); }
     .skill-groups{ grid-template-columns:repeat(2,1fr); }
     .pd-sidebar{ width:320px; padding:90px 30px 30px; gap:30px; }
-    .pd-scroll-area{ padding:40px 50px; gap:40px; }
+    .pd-scroll-area{ padding:40px 50px; }
+    .pd-track{ gap:40px; }
   }
   @media (max-width: 680px){
     nav.links{
@@ -515,7 +520,8 @@
     .pd-layout{ flex-direction:column; overflow-y:auto; }
     .pd-sidebar{ width:100%; padding:86px 24px 26px; gap:24px; overflow-y:visible; }
     .pd-desc{ margin-top:16px; }
-    .pd-scroll-area{ padding:30px 24px; gap:28px; flex-shrink:0; }
+    .pd-scroll-area{ padding:30px 24px; flex-shrink:0; }
+    .pd-track{ gap:28px; }
     .pd-item.phone .pd-frame{ width:220px; }
     .pd-item.plain .pd-frame{ max-width:82vw; max-height:56vh; }
     .pd-thumbs{ padding:14px 20px; }
